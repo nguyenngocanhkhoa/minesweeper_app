@@ -1,0 +1,17 @@
+<h1><%= @board.name %></h1>
+<p>Email: <%= @board.email %></p>
+<p>Dimensions: <%= @board.width %> x <%= @board.height %></p>
+<p>Mines: <%= @board.mines %></p>
+
+<h2>Board</h2>
+<table>
+  <% @board_grid.each do |row| %>
+    <tr>
+      <% row.each do |cell| %>
+        <td><%= cell == "X" ? "●" : cell %></td>
+      <% end %>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to 'Back to Home', boards_path %>
